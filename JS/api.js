@@ -1,8 +1,18 @@
+//Search area
 
+const searchField = document.getElementById('search-field');
+const authorDetails = document.getElementById('author-details');
+const bookNumber = document.getElementById('book-numbers');
+const searchResult = document.getElementById('search-result');
 
-//This is fetching the url 
-//Load data
 const loadData = async () => {
-    const url = ``
-    const respons = await fetch()
+    searchText = searchField.value;
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    searchBook(data);
+}
+
+const searchBook = () => {
+
 }
