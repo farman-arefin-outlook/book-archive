@@ -43,10 +43,20 @@
 // }
 
 
-document.getElementById('error-message').style.display = 'none';
-document.getElementById('spinner').style.display = 'none';
-document.getElementById('author-details').textContent = ''
+// document.getElementById('error-message').style.display = 'none';
+// document.getElementById('spinner').style.display = 'none';
+// document.getElementById('author-details').textContent = ''
+
+
+const errorMessage = document.getElementById('error-message');
+const spinner = document.getElementById('spinner');
+const authorDetails = document.getElementById('author-details');
+
+const searchResult = document.getElementById('search-result');
 const searchBook = () => {
+    errorMessage.style.display = 'none';
+    spinner.style.display = 'none';
+    authorDetails.textContent = '';
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
 
@@ -72,28 +82,31 @@ const searchBook = () => {
 }
 
 const displayError = () => {
-    document.getElementById('error-message').style.display = 'block';
-    document.getElementById('spinner').style.display = 'none';
-    document.getElementById('book-numbers').textContent = '';
-    document.getElementById('author-details').textContent = '';
+    // document.getElementById('error-message').style.display = 'block';
+    // document.getElementById('spinner').style.display = 'none';
+    // document.getElementById('book-numbers').textContent = '';
+    // document.getElementById('author-details').textContent = '';
+    errorMessage.style.display = 'block';
+    spinner.style.display = 'none';
+    authorDetails.textContent = '';
 
 }
-// Display Search Result
-const displaySearchResult = books => {
+// This is display body
+const displaySearchResult = items => {
     document.getElementById('book-numbers').textContent = '';
-    const searchResult = document.getElementById('search-result');
+
     searchResult.textContent = '';
 
-    const bookList = books.docs;
-    if (bookList.length == 0) {
+    const bookItem = items.docs;
+    if (bookItem.length == 0) {
         displayError();
     }
     else {
         document.getElementById('error-message').style.display = 'none';
         document.getElementById('spinner').style.display = 'none';
-        document.getElementById('book-numbers').innerText = `Books Found ${bookList.length}`;
+        document.getElementById('book-numbers').innerText = `Books Found ${bookItem.length}`;
         // Retrieve each book and display in a card
-        bookList.forEach(book => {
+        bookItem.forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
