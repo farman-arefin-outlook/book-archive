@@ -11,41 +11,32 @@
     <title>Books World</title>
 </head>
 
-<body class="bg-gray" data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
+<body class="bg-gray">
     <section class="container">
-        <h2 class="text-center text-success">Search your Book</h2>
-        <!-- Book search area -->
+        <!-- This is search heading  -->
+        <h2 class="text-center text-success mx-auto mb-5">!!Please enter the book name below!!</h2>
+        <!-- This is search input area  -->
         <div class="input-group mb-3 w-50 mx-auto">
             <input id="search-field" type="text" class="form-control" placeholder="Search your favourite book"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="searchBook()" class="btn btn-primary" type="button" id="button-search">search</button>
         </div>
+        <!-- This is error message handling area  -->
         <div>
-            <h1 id="error-message" class="bg-dark text-center text-danger" style="display: none;">Insert a valid name
+            <h1 id="error-message" class="bg-light text-center text-danger" style="display: none;">Please enter a valid
+                book name.
             </h1>
             <div id="spinner" class="spinner-grow" style="margin-left: 50%; display: none;" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
 
-        <!-- Author details -->
+        <!-- This is author title  -->
         <div id="author-details" class="my-5  w-50 mx-auto shadow-lg"></div>
-        <h1 class="bg-dark text-warning text-center" id="book-numbers">Books Found 100</h1>
-        <!-- Book search result -->
-
+        <h1 class="bg-dark text-warning text-center" id="book-numbers"></h1>
+        <!-- This is result field  -->
         <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div onclick="loadAuthorDetail('OL62134A')" class="card h-100 text-center">
-                    <img src="https://covers.openlibrary.org/b/id/554106-M.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
 
-                        <h5 class="card-title">Title: Javascript</h5>
-                        <p class="card-text">Author Name:Gary B. Shelly</p>
-                        <p class="card-text">Publisher: Course Technology</p>
-                        <p class="card-text">First Year of Publication: 2000</p>
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- This is bootstrap js  -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
